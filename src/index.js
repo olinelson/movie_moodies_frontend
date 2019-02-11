@@ -1,9 +1,11 @@
 const url = "http://localhost:3000/api/v1"
 let moodIndex
 let movieIndex
+let movieShow
 let allMovies = []
 let allMoods = []
 let searchResults = []
+
 
 function apiGetMoods(){
   fetch(`${url}/moods`)
@@ -20,6 +22,13 @@ function apiGetMovies(){
 
 
 
+}
+
+function findMovieById(id){
+  let found = allMovies.find(element => {
+    return element.id == id
+  })
+  return found
 }
 
 function findMoodById(id) {
@@ -58,11 +67,25 @@ function indexMovies(movies){
   }
 }
 
+function displayMovie(movieId){
+  movie = findMovieById(movieId)
+  movieShow.innerHTML =
+  `
+  <div class="movie_show">
+    <img src="${movie.image}" alt="">
+    <h4>${movie.title}</h4>
+    <p>${movie.description}</p>
+    <p>${movie.length} minutes</p>
+  </div>
+  `
+}
+
 
 
 document.addEventListener("DOMContentLoaded", e => {
   moodIndex = document.querySelector('#mood-index')
   movieIndex = document.querySelector('#movie-index')
+  movieShow = document.querySelector('#movie-show')
   apiGetMoods()
   apiGetMovies()
 
@@ -74,26 +97,17 @@ document.addEventListener("DOMContentLoaded", e => {
     movieIndex.innerHTML = ""
     indexMovies(relevantMovies)
 
-    //unless the id of the movies has the id of the event target
-    //hide the movies
+  }) //end of mood listener
 
-    // for(let movie of allMovies){
-    //   for (let mood of movie.moods){
-    //     console.log(mood.id)
-    //     if (mood. != moodId){
-    //
-    //     }
-    //   }
-    // }
+  movieIndex.addEventListener('click', e => {
+    let movieId = e.target.dataset.id
+    movieIndex.innerHTML = ""
+
+    displayMovie(movieId)
+
+  }) // end of movie index Listener
 
 
 
 
-    })
-
-
-
-
-
-
-  })
+}) //end of dom content loaded
