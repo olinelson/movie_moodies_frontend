@@ -1,12 +1,113 @@
-#mood-index{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-#movie-index{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+/* font-family: 'Staatliches', cursive;
+font-family: 'Fahkwang', sans-serif;
+font-family: 'Nova Flat', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Love Ya Like A Sister', cursive;
+font-family: 'Limelight', cursive; */
+
+body {
+  padding: 0;
+  margin: 0;
 }
 
-.movie-image{
-  width: 5rem;
+p{
+  font-family: 'Roboto', sans-serif;
+}
+
+/* h4{
+  font-family: 'Limelight', cursive;
+  font-size: 1.5rem;
+} */
+
+#mood-index {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+  height: auto;
+  background-color: green;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+
+
+}
+
+#movie-index {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 50vh;
+  background-color: yellow; */
+  height: auto;
+  background-color: yellow;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+
+
+header {
+  background-color: pink;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+#header-title {
+  margin: 0 0 0 2rem;
+  font-weight: normal;
+  font-family: 'Monoton', cursive;
+  font-size: 3rem;
+
+
+}
+
+.mood-card{
+  margin: 2rem;
+  border: 1px solid black;
+  height: 8rem;
+  width: 8rem;
+}
+
+.mood-image{
+  width: 100%;
+}
+
+.mood-name{
+  width: 100%;
+  text-align: center;
+}
+.movie-image {
+  width: 100%;
+
+}
+
+.movie-card{
+  /* border: 1px solid black; */
+  max-width: 10rem;
+  margin: 1rem;
+}
+
+.movie-title{
+  width: 100%;
+  text-align: center;
+}
+
+.movie-show-image{
+  width: auto;
+  height: 100%;
+}
+
+.movie-show-info{
+  background-color: blue;
+}
+
+#movie-show{
+  background-color: pink;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
 }

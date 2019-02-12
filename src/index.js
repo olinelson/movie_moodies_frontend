@@ -46,8 +46,8 @@ function indexMoods(moods){
     moodIndex.innerHTML +=
     `
     <div data-id="${mood.id}" id="mood-card-${mood.id}" class="mood-card">
-      <img data-id="${mood.id}" src="${mood.image}" alt="">
-      <h4 data-id="${mood.id}">${mood.name}</h4>
+      <img class="mood-image" data-id="${mood.id}" src="${mood.image}" alt="">
+      <h4 class="mood-name" data-id="${mood.id}">${mood.name}</h4>
     </div>
 
     `
@@ -61,7 +61,7 @@ function indexMovies(movies){
     `
     <div data-id="${movie.id}" id="movie-card-${movie.id}" class="movie-card">
       <img data-id="${movie.id}" class="movie-image"  src="${movie.image}" alt="">
-      <h4 data-id="${movie.id}">${movie.title}</h4>
+      <h4 class="movie-title" data-id="${movie.id}">${movie.title}</h4>
     </div>
     `
   }
@@ -72,10 +72,12 @@ function displayMovie(movieId){
   movieShow.innerHTML =
   `
   <div class="movie_show">
-    <img src="${movie.image}" alt="">
+    <img class="movie-show-image" src="${movie.image}" alt="">
+    <div class="movie-show-info">
     <h4>${movie.title}</h4>
     <p>${movie.description}</p>
     <p>${movie.length} minutes</p>
+    </div>
   </div>
   `
 }
