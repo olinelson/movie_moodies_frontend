@@ -53,7 +53,7 @@ function indexMoods(moods){
     moodIndex.innerHTML +=
     `
     <div data-id="${mood.id}" id="mood-card-${mood.id}" class="mood-card">
-      <img class="mood-image" data-id="${mood.id}" src="${mood.image}" alt="">
+      <i data-id="${mood.id}" class="${mood.image}"></i>
       <h4 class="mood-name" data-id="${mood.id}">${mood.name}</h4>
     </div>
 
