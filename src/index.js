@@ -9,7 +9,7 @@ let allMoods = []
 let searchResults = []
 let header
 
-
+// 
 function apiGetMoods(){
   fetch(`${url}/moods`)
   .then(r => {return  r.json()})
