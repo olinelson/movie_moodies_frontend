@@ -3,47 +3,54 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: black;
+  font-family: roboto;
 }
 
 p{
   font-family: 'Roboto', sans-serif;
 }
 
-
 #mood-index {
   /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr; */
   height: auto;
-  background-color: green;
-
+  background-color: black;
+  color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2rem;
-
-
 }
 
 #movie-index{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: black;
+  color: white;
 }
 
 #movie-scroll-index {
-
   display: none;
   overflow-y: hidden;
   overflow-x: auto;
   min-height: 20rem;
+  background-color: black;
+  color: white;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+#movie-scroll-index::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
-
-
 header {
-  background-color: pink;
+  background-color: black;
   height: 5vh;
   display: flex;
   align-items: center;
+  margin: 1rem;
 }
 
 #header-title {
@@ -51,8 +58,7 @@ header {
   font-weight: normal;
   font-family: 'Monoton', cursive;
   font-size: 3rem;
-
-
+  color: white;
 }
 
 .mood-card{
@@ -73,18 +79,11 @@ header {
 .movie-image {
   width: 100%;
   height: auto;
-
 }
 
 .movie-card{
   flex: 0 0 7rem;
   margin: 1.5rem;
-
-
-
-
-
-
 }
 
 .movie-title{
@@ -94,12 +93,27 @@ header {
 }
 
 .movie-show-info{
-  background-color: ;
 
+}
+.movie-show-info h4{
+  margin: 0;
+}
+
+
+
+.movie-show-info{
+  color: white;
+}
+
+.movie-show-info h4{
+  font-size: 3rem;
+}
+
+.movie-show-info p {
+  font-size: 1.25rem;
 }
 
 #movie-show{
-
   display: grid;
   grid-template-columns: 1fr 2fr;
   width: 95%;
@@ -107,9 +121,9 @@ header {
   margin-left: 2.5%;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+}
 
-
-
-
-
+h4{
+  font-size: 1.2rem;
+  
 }

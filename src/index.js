@@ -1,4 +1,5 @@
 const url = "http://localhost:3000/api/v1"
+
 let moodIndex
 let movieScrollIndex
 let movieIndex
@@ -6,6 +7,7 @@ let movieShow
 let allMovies = []
 let allMoods = []
 let searchResults = []
+let header
 
 
 function apiGetMoods(){
@@ -15,6 +17,7 @@ function apiGetMoods(){
   .then(r => indexMoods(r))
 
 }
+
 function apiGetMovies(){
   fetch(`${url}/movies`)
   .then(r => {return  r.json()})
@@ -72,6 +75,10 @@ function indexScrollMovies(movies){
 }
 
 function indexMovies(movies){
+  movieScrollIndex.style.display = "none"
+  movieShow.innerHTML = ""
+  movieIndex.innerHTML = ""
+
   for (let movie of movies){
     movieIndex.innerHTML +=
     `
@@ -83,7 +90,12 @@ function indexMovies(movies){
   }
 }
 
-function displayMovie(movieId){
+function showMovie(movieId){
+
+  movieIndex.innerHTML = ''
+  movieScrollIndex.style.display = "flex"
+  moodIndex.style.display = "none"
+
   movie = findMovieById(movieId)
   movieShow.innerHTML =
   `
@@ -100,25 +112,40 @@ function displayMovie(movieId){
 }
 
 
+function homePageConfiguration() {
+  movieScrollIndex.style.display = "none"
+  moodIndex.style.display = "flex"
+  movieShow.innerHTML = ""
+  movieIndex.innerHTML = ""
+  indexMovies(allMovies)
+}
+
 
 document.addEventListener("DOMContentLoaded", e => {
+
   moodIndex = document.querySelector('#mood-index')
   movieScrollIndex = document.querySelector('#movie-scroll-index')
   movieIndex = document.querySelector('#movie-index')
   movieShow = document.querySelector('#movie-show')
+  header = document.querySelector('header')
+
   apiGetMoods()
   apiGetMovies()
+
+  //header button
+  header.addEventListener("click", e => {
+    if (e.target.id === "header-title"){
+      homePageConfiguration()
+    }
+  //
+
+}) // end of header button
+
 
   moodIndex.addEventListener('click', e => {
     let moodId = e.target.dataset.id
 
-
     relevantMovies = findMoodById(moodId).movies
-    movieScrollIndex.style.display = "none"
-    movieShow.innerHTML = ""
-    movieIndex.innerHTML = ""
-
-
     indexMovies(relevantMovies)
 
   }) //end of mood listener
@@ -126,18 +153,14 @@ document.addEventListener("DOMContentLoaded", e => {
   movieScrollIndex.addEventListener('click', e => {
     let movieId = e.target.dataset.id
 
-
-    displayMovie(movieId)
+    showMovie(movieId)
 
   }) // end of movie index Listener
 
   movieIndex.addEventListener('click', e => {
     let movieId = e.target.dataset.id
-    movieIndex.innerHTML = ''
-    movieScrollIndex.style.display = "flex"
 
-
-    displayMovie(movieId)
+    showMovie(movieId)
 
   }) // end of movie index Listener
 
