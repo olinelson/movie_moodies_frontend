@@ -1,9 +1,4 @@
-/* font-family: 'Staatliches', cursive;
-font-family: 'Fahkwang', sans-serif;
-font-family: 'Nova Flat', cursive;
-font-family: 'Special Elite', cursive;
-font-family: 'Love Ya Like A Sister', cursive;
-font-family: 'Limelight', cursive; */
+
 
 body {
   padding: 0;
@@ -14,10 +9,6 @@ p{
   font-family: 'Roboto', sans-serif;
 }
 
-/* h4{
-  font-family: 'Limelight', cursive;
-  font-size: 1.5rem;
-} */
 
 #mood-index {
   /* display: grid;
@@ -33,18 +24,17 @@ p{
 
 }
 
-#movie-index {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 50vh;
-  background-color: yellow; */
-  height: auto;
-  background-color: yellow;
+#movie-index{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 2rem;
+#movie-scroll-index {
+
+  display: none;
+  overflow-y: hidden;
+  overflow-x: auto;
+  min-height: 20rem;
 }
 
 
@@ -82,32 +72,44 @@ header {
 }
 .movie-image {
   width: 100%;
+  height: auto;
 
 }
 
 .movie-card{
-  /* border: 1px solid black; */
-  max-width: 10rem;
-  margin: 1rem;
+  flex: 0 0 7rem;
+  margin: 1.5rem;
+
+
+
+
+
+
 }
 
 .movie-title{
-  width: 100%;
-  text-align: center;
 }
 
 .movie-show-image{
-  width: auto;
-  height: 100%;
 }
 
 .movie-show-info{
-  background-color: blue;
+  background-color: ;
+
 }
 
 #movie-show{
-  background-color: pink;
-  height: 50vh;
-  display: flex;
-  flex-direction: row;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 95%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+
+
+
+
+
 }
