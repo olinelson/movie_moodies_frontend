@@ -8,8 +8,9 @@ let allMovies = []
 let allMoods = []
 let searchResults = []
 let header
+let uniqMovies
 
-// 
+//
 function apiGetMoods(){
   fetch(`${url}/moods`)
   .then(r => {return  r.json()})
@@ -74,20 +75,40 @@ function indexScrollMovies(movies){
   }
 }
 
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+
+
 function indexMovies(movies){
   movieScrollIndex.style.display = "none"
   movieShow.innerHTML = ""
   movieIndex.innerHTML = ""
 
-  for (let movie of movies){
+  // for (let movie of movies){
+  //
+  //
+  //   movieIndex.innerHTML +=
+  //   `
+  //   <div data-id="${movie.id}" id="movie-card-${movie.id}" class="movie-card">
+  //     <img data-id="${movie.id}" class="movie-image"  src="${movie.image}" alt="">
+  //     <h4 class="movie-title" data-id="${movie.id}">${movie.title}</h4>
+  //   </div>
+  //   `
+  // }
+   uniqMovies = movies.filter( onlyUnique )
+
+
+
+  uniqMovies.map(movie => {
     movieIndex.innerHTML +=
     `
     <div data-id="${movie.id}" id="movie-card-${movie.id}" class="movie-card">
-      <img data-id="${movie.id}" class="movie-image"  src="${movie.image}" alt="">
-      <h4 class="movie-title" data-id="${movie.id}">${movie.title}</h4>
-    </div>
+       <img data-id="${movie.id}" class="movie-image"  src="${movie.image}" alt="">
+        <h4 class="movie-title" data-id="${movie.id}">${movie.title}</h4>
+      </div>
     `
-  }
+  })
 }
 
 function showMovie(movieId){
