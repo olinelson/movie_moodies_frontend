@@ -8,9 +8,9 @@ let allMovies = []
 let allMoods = []
 let searchResults = []
 let header
-let uniqMovies
+let specialMovies
 
-//
+
 function apiGetMoods(){
   fetch(`${url}/moods`)
   .then(r => {return  r.json()})
@@ -49,6 +49,11 @@ let found = allMoods.find(element => {
 return found
 }
 
+function unique(array, propertyName) {
+   return array.filter((e, i) => array.findIndex(a => a[propertyName] === e[propertyName]) === i);
+}
+
+
 function indexMoods(moods){
   for (let mood of moods){
     moodIndex.innerHTML +=
@@ -75,9 +80,6 @@ function indexScrollMovies(movies){
   }
 }
 
-function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-}
 
 
 function indexMovies(movies){
@@ -85,20 +87,7 @@ function indexMovies(movies){
   movieShow.innerHTML = ""
   movieIndex.innerHTML = ""
 
-  // for (let movie of movies){
-  //
-  //
-  //   movieIndex.innerHTML +=
-  //   `
-  //   <div data-id="${movie.id}" id="movie-card-${movie.id}" class="movie-card">
-  //     <img data-id="${movie.id}" class="movie-image"  src="${movie.image}" alt="">
-  //     <h4 class="movie-title" data-id="${movie.id}">${movie.title}</h4>
-  //   </div>
-  //   `
-  // }
-   uniqMovies = movies.filter( onlyUnique )
-
-
+  let uniqMovies = unique(movies, "title")
 
   uniqMovies.map(movie => {
     movieIndex.innerHTML +=
@@ -166,7 +155,10 @@ document.addEventListener("DOMContentLoaded", e => {
   moodIndex.addEventListener('click', e => {
     let moodId = e.target.dataset.id
 
+
+
     relevantMovies = findMoodById(moodId).movies
+
     indexMovies(relevantMovies)
 
   }) //end of mood listener
