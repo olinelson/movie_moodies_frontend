@@ -80,7 +80,7 @@ function indexScrollMovies(movies){
   }
 }
 
-
+// 
 
 function indexMovies(movies){
   movieScrollIndex.style.display = "none"
