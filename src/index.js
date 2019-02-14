@@ -25,9 +25,6 @@ function apiGetMovies(){
   .then(r => allMovies = r)
   .then(r => populateIndexAndScroll(r) )
 
-
-
-
 }
 
 function populateIndexAndScroll(movies){
@@ -63,6 +60,18 @@ function resetMoodIndicators(){
 function showMoodSelected(moodContainer) {
 
   moodContainer.style.borderBottom = "2px solid white"
+}
+
+function muteVideoToggle() {
+  muteButtonIcon = document.querySelector("#mute-button-icon")
+  if (movieBackgroundVideo.muted){
+    movieBackgroundVideo.muted = false
+    muteButtonIcon.className = "fas fa-volume-up"
+  }else{
+    movieBackgroundVideo.muted = true
+    muteButtonIcon.className = "fas fa-volume-mute"
+  }
+
 }
 
 
@@ -155,12 +164,13 @@ document.addEventListener("DOMContentLoaded", e => {
   apiGetMoods()
   apiGetMovies()
 
+
   //header button
   header.addEventListener("click", e => {
     if (e.target.id === "header-title"){
       homePageConfiguration()
     }
-  //
+
 
 }) // end of header button
 
@@ -204,6 +214,13 @@ document.addEventListener("DOMContentLoaded", e => {
     else{
       header.style.backgroundColor = "rgba(0, 0, 0, 0)"
     }
+  }) // end of scroll listener
+
+  document.querySelector("#video-overlay").addEventListener("click", e => {
+    console.log('hello video')
+
+    muteVideoToggle()
+
   })
 
 
