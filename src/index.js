@@ -53,13 +53,25 @@ function unique(array, propertyName) {
    return array.filter((e, i) => array.findIndex(a => a[propertyName] === e[propertyName]) === i);
 }
 
+function resetMoodIndicators(){
+  allMoodContainers = document.querySelectorAll('.mood-card')
+  allMoodContainers.forEach(function(card) {
+  card.style.borderBottom = ""
+});
+}
+
+function showMoodSelected(moodContainer) {
+
+  moodContainer.style.borderBottom = "2px solid white"
+}
+
 
 function indexMoods(moods){
   for (let mood of moods){
     moodIndex.innerHTML +=
     `
     <div data-id="${mood.id}" id="mood-card-${mood.id}" class="mood-card">
-      <i data-id="${mood.id}" class="${mood.image}"></i>
+      <i data-id="${mood.id}" class="${mood.image} mood-card-icon"></i>
       <h4 class="mood-name" data-id="${mood.id}">${mood.name}</h4>
     </div>
 
@@ -72,15 +84,15 @@ function indexScrollMovies(movies){
   for (let movie of movies){
     movieScrollIndex.innerHTML +=
     `
-    <div data-id="${movie.id}" id="movie-card-${movie.id}" class="movie-card">
-      <img data-id="${movie.id}" class="movie-image"  src="${movie.image}" alt="">
+    <div data-id="${movie.id}" id="movie-card-${movie.id}" class="index-movie-card">
+      <img data-id="${movie.id}" class="movie-scroll-image"  src="${movie.image}" alt="">
       <h4 class="movie-title" data-id="${movie.id}">${movie.title}</h4>
     </div>
     `
   }
 }
 
-// 
+//
 
 function indexMovies(movies){
   movieScrollIndex.style.display = "none"
@@ -128,6 +140,7 @@ function homePageConfiguration() {
   movieShow.innerHTML = ""
   movieIndex.innerHTML = ""
   indexMovies(allMovies)
+  resetMoodIndicators()
 }
 
 
@@ -155,11 +168,15 @@ document.addEventListener("DOMContentLoaded", e => {
   moodIndex.addEventListener('click', e => {
     let moodId = e.target.dataset.id
 
-
+    let moodButton = document.querySelector(`#mood-card-${e.target.dataset.id}`)
 
     relevantMovies = findMoodById(moodId).movies
 
     indexMovies(relevantMovies)
+    resetMoodIndicators()
+    showMoodSelected(moodButton)
+
+
 
   }) //end of mood listener
 
