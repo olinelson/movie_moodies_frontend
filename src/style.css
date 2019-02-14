@@ -34,6 +34,8 @@ p{
 
 
 
+
+
 #movie-index{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -131,6 +133,7 @@ header {
 
 .movie-scroll-image:hover{
   width: 110%;
+  cursor: pointer
 
 }
 
@@ -218,4 +221,24 @@ h4{
 
 #video-overlay i{
   margin: 1rem;
+}
+
+ul{
+  list-style: none;
+}
+.trailer-iframe-container{
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.trailer-iframe{
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+
 }
