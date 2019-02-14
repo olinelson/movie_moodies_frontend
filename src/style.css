@@ -29,7 +29,7 @@ p{
   margin: 1.5rem;
   display:flex;
   flex-direction:column;
- 
+
 }
 
 
@@ -45,7 +45,7 @@ p{
   display: none;
   overflow-y: hidden;
   overflow-x: auto;
-  min-height: 20rem;
+  height: 25rem;
   background-color: black;
   color: white;
   scrollbar-width: none; /* Firefox */
@@ -58,11 +58,12 @@ p{
 }
 
 header {
-  background-color:rgba(1, 186, 3, 0);
-  height: 5vh;
+  background-color:rgba(0, 0, 0, 0);
+  height: auto;
+  width: 100%;
   display: flex;
   align-items: center;
-  margin: 1rem;
+  padding: 1rem;
   position:fixed;
 }
 
@@ -118,7 +119,7 @@ header {
 }
 
 .movie-image:hover{
-  
+
 
 }
 
@@ -138,7 +139,7 @@ header {
   display:flex;
   flex-direction:column;
   justify-content: space-between;
-  
+
 }
 
 .movie-title{

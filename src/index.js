@@ -194,7 +194,17 @@ document.addEventListener("DOMContentLoaded", e => {
 
   }) // end of movie index Listener
 
+  document.addEventListener("scroll", e => {
 
+    pageYPosition = window.pageYOffset
+
+    if (pageYPosition > 150){
+      header.style.backgroundColor = "rgba(0, 0, 0, 0.6)"
+    }
+    else{
+      header.style.backgroundColor = "rgba(0, 0, 0, 0)"
+    }
+  })
 
 
 }) //end of dom content loaded
