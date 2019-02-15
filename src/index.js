@@ -76,6 +76,7 @@ function muteVideoToggle() {
 }
 
 
+
 function indexMoods(moods) {
   for (let mood of moods) {
     moodIndex.innerHTML +=
@@ -127,6 +128,9 @@ function showMovie(movieId) {
   moodIndex.style.display = "none"
   movieBackground.style.display = "none"
   movie = findMovieById(movieId)
+
+  window.scrollTo(0, 0)
+
   movieShow.innerHTML =
     `
     <div class = "movie-show-image">
