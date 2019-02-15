@@ -52,6 +52,7 @@ p{
   color: white;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;
+  margin-top: 6rem;
 
 }
 #movie-scroll-index::-webkit-scrollbar {
@@ -83,7 +84,6 @@ header {
 }
 
 #header-title:hover{
-  color: rgb(209, 209, 209);
   cursor: pointer;
 }
 
@@ -98,13 +98,13 @@ header {
   padding-bottom: 2rem;
 }
 
-.mood-card-icon:active{
+/* .mood-card-icon:active{
   color: rgb(168, 168, 168);
   font-size: 5rem;
   margin-bottom: 1rem;
   padding-top: .2rem;
 
-}
+} */
 
 .mood-card-icon:hover{
   cursor: pointer;
@@ -132,7 +132,6 @@ header {
 }
 
 .movie-scroll-image:hover{
-  width: 110%;
   cursor: pointer
 
 }
