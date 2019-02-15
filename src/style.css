@@ -19,7 +19,7 @@ p{
   flex-wrap: wrap;
   justify-content: center;
   margin-top:;
-  padding-bottom: 5vh;
+  
 
 
 }
@@ -88,7 +88,7 @@ header {
 }
 
 .mood-card{
-  margin: 2rem;
+  margin: .25rem;
   height: 8rem;
   width: 8rem;
   font-size: 3.5rem;
@@ -153,17 +153,23 @@ header {
 }
 
 .movie-show-info{
+ 
 
 }
 .movie-show-info h4{
   margin: 0;
+  
 }
+
 
 
 
 .movie-show-info{
   color: white;
+  display: flex;
+  flex-direction: column;
 }
+
 
 .movie-show-info h4{
   font-size: 3rem;
@@ -208,7 +214,7 @@ h4{
 
 #video-overlay{
   z-index: 2;
-  height: 35vw;
+  height: 38vw;
   width: 100%;
   background-color: rgba(228, 192, 129, 0);
   position:absolute;

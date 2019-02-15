@@ -138,7 +138,7 @@ function showMovie(movieId){
     <div class="movie-show-info">
     <h4>${movie.title}</h4>
     <p>${movie.description}</p>
-    <p>${movie.length} minutes</p>
+    <small>${movie.length} minutes</small>
     <div id="movie_videos_index_${movie.id}"></div>
     </div>
 
@@ -151,7 +151,7 @@ function generateVideosList(videos, destination){
   for (let video of videos){
     destination.innerHTML +=
     `
-     
+
      <div class="trailer-iframe-container">
     <iframe class="trailer-iframe" src="https://www.youtube.com/embed/${video.url_key} " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
