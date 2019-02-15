@@ -19,7 +19,7 @@ p{
   flex-wrap: wrap;
   justify-content: center;
   margin-top:;
-  
+
 
 
 }
@@ -69,6 +69,7 @@ header {
   padding: 1rem;
   position:fixed;
   z-index: 3;
+  margin: 0;
 }
 
 #header-title {
@@ -152,12 +153,12 @@ header {
 }
 
 .movie-show-info{
- 
+
 
 }
 .movie-show-info h4{
   margin: 0;
-  
+
 }
 
 
@@ -221,8 +222,11 @@ h4{
   font-size: 4rem;
   color: white;
   align-items: flex-end;
-  justify-content: right;
+  justify-content: flex-end;
+
+
 }
+
 
 #video-overlay i{
   margin: 1rem;
