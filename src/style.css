@@ -187,6 +187,7 @@ header {
   margin-left: 2.5%;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+
 }
 
 h4{
@@ -234,6 +235,7 @@ ul{
   list-style: none;
 }
 .trailer-iframe-container{
+  grid-column: 1/4;
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
